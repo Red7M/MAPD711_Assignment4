@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RedaMehali_MAPD711_Assignment4</string>
+    <string name="login">LOGIN</string>
+    <string name="customer">Customer</string>
+    <string name="pizza_admin">Pizza admin</string>
+</resources>
