@@ -36,7 +36,7 @@ class CustomerPlaceOrder: AppCompatActivity() {
         val customer = customerName.text.toString()
         val quantity = pizzaQuantity.text.toString()
 
-        val pizza = Pizza(1000, pizzaName, customer, quantity)
+        val pizza = Pizza(0, pizzaName, customer, quantity)
         pizzaOrderViewModel.addPizza(pizza)
         Toast.makeText(
             this,
