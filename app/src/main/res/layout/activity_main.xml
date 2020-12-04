@@ -6,16 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/pizzaIconImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_baseline_local_pizza_24"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayoutCustomer"
+        android:id="@+id/inputLayoutCustomerName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/customer"
-        app:errorEnabled="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/pizzaIconImage">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/customerInputEditText"
@@ -30,13 +39,46 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/pizzaAdminsLayout"
+        android:id="@+id/inputLayoutCustomerPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/customer_password"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutCustomerName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customerInputEditPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginCustomerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:enabled="false"
+        android:text="@string/customer_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutCustomerPassword" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pizzaAdminsLayoutName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/pizza_admin"
+        android:layout_marginTop="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputLayoutCustomer">
+        app:layout_constraintTop_toBottomOf="@+id/loginCustomerButton">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pizzaAdminsEditText"
@@ -50,25 +92,36 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:importantForAccessibility="no"
-        android:src="@drawable/ic_baseline_local_pizza_24"
-        app:layout_constraintBottom_toTopOf="@+id/inputLayoutCustomer"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/loginButton"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pizzaAdminsLayoutPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:hint="@string/pizza_admin_password"
+        app:layout_constraintTop_toBottomOf="@+id/pizzaAdminsLayoutName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pizzaAdminsEditPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginAdminButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:enabled="false"
-        android:text="@string/login"
+        android:text="@string/pizza_admin_login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pizzaAdminsLayout" />
-
+        app:layout_constraintTop_toBottomOf="@+id/pizzaAdminsLayoutPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

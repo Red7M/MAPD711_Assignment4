@@ -1,6 +1,24 @@
 <resources>
     <string name="app_name">RedaMehali_MAPD711_Assignment4</string>
-    <string name="login">LOGIN</string>
-    <string name="customer">Customer</string>
+    <string name="customer_login">CUSTOMER LOGIN</string>
+    <string name="pizza_admin_login">ADMIN LOGIN</string>
+    <string name="customer">Customer: </string>
     <string name="pizza_admin">Pizza admin</string>
+    <string name="customer_password">Customer password</string>
+    <string name="pizza_admin_password">Pizza admin password</string>
+    <string name="place_an_order">PLACE AN ORDER</string>
+    <string name="view_orders">VIEW ORDERS</string>
+    <string name="edit_personal_information">EDIT PERSONAL INFORMATION</string>
+    <string name="first_name">First name:</string>
+    <string name="last_name">Last name:</string>
+    <string name="address">Address:</string>
+    <string name="city">City:</string>
+    <string name="postal_code">Postal code:</string>
+    <string name="pizza_name">Pizza name:</string>
+    <string name="pizza_category">Category:</string>
+    <string name="quantity">Quantity:</string>
+    <string name="order">ORDER</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="update">UPDATE</string>
 </resources>
