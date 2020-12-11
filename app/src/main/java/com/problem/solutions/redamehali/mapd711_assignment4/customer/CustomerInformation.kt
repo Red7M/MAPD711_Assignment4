@@ -1,4 +1,4 @@
-package com.problem.solutions.redamehali.mapd711_assignment4
+package com.problem.solutions.redamehali.mapd711_assignment4.customer
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.problem.solutions.redamehali.mapd711_assignment4.Constant
+import com.problem.solutions.redamehali.mapd711_assignment4.R
 import kotlinx.android.synthetic.main.customer_information_layout.*
 
 /**

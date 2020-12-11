@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CustomerScreen" />
-        <activity android:name=".CustomerInformation" />
-        <activity android:name=".CustomerPlaceOrder" />
-        <activity android:name=".ViewPizzaOrders" />
+        <activity android:name=".customer.CustomerScreen" />
+        <activity android:name=".customer.CustomerInformation" />
+        <activity android:name=".customer.CustomerPlaceOrder" />
+        <activity android:name=".pizza.ViewPizzaOrders" />
     </application>
 
 </manifest>

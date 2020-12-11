@@ -1,4 +1,4 @@
-package com.problem.solutions.redamehali.mapd711_assignment4
+package com.problem.solutions.redamehali.mapd711_assignment4.customer
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,9 +1,11 @@
-package com.problem.solutions.redamehali.mapd711_assignment4
+package com.problem.solutions.redamehali.mapd711_assignment4.customer
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.problem.solutions.redamehali.mapd711_assignment4.R
+import com.problem.solutions.redamehali.mapd711_assignment4.pizza.ViewPizzaOrders
 
 /**
  * Created by Reda Mehali on 12/3/20.

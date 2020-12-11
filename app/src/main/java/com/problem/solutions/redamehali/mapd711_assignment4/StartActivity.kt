@@ -11,8 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
+import com.problem.solutions.redamehali.mapd711_assignment4.admin.AdminHomeScreen
+import com.problem.solutions.redamehali.mapd711_assignment4.admin.AdminViewModel
+import com.problem.solutions.redamehali.mapd711_assignment4.customer.CustomerScreen
+import com.problem.solutions.redamehali.mapd711_assignment4.customer.CustomerViewModel
 
-class MainActivity : AppCompatActivity() {
+class StartActivity : AppCompatActivity() {
 
     private lateinit var customerInputEditText: TextInputEditText
     private lateinit var customerInputEditPassword: TextInputEditText
@@ -23,8 +27,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var loginAdminButton: Button
 
     private lateinit var customerViewModel: CustomerViewModel
+    private lateinit var adminViewModel : AdminViewModel
 
     private var userPassWordMap: HashMap<String, String> = HashMap()
+    private var adminPasswordMap : HashMap<String, String> = HashMap()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,9 +45,16 @@ class MainActivity : AppCompatActivity() {
         loginAdminButton = findViewById(R.id.loginAdminButton)
 
         customerViewModel = ViewModelProvider(this).get(CustomerViewModel::class.java)
+        adminViewModel = ViewModelProvider(this).get(AdminViewModel::class.java)
+
         customerViewModel.readAllCustomerData.observe(this, Observer { customers ->
             for (customer in customers) {
                 userPassWordMap[customer.username] = customer.password
+            }
+        })
+        adminViewModel.readAllAdminData.observe(this, Observer { admins ->
+            for (admin in admins) {
+                adminPasswordMap[admin.username] = admin.password
             }
         })
 
@@ -52,8 +65,17 @@ class MainActivity : AppCompatActivity() {
     private fun checkWhetherUserExists(): Boolean {
         for (username in userPassWordMap.keys) {
             if (username == customerInputEditText.text.toString() &&
-                userPassWordMap[username]!! == customerInputEditPassword.text.toString()
-            ) {
+                userPassWordMap[username]!! == customerInputEditPassword.text.toString()) {
+                return true
+            }
+        }
+        return false
+    }
+
+    private fun checkIfAdminExist() : Boolean {
+        for (admin in adminPasswordMap.keys) {
+            if (admin == pizzaAdminsEditText.text.toString() &&
+                    adminPasswordMap[admin]!! == pizzaAdminsEditPassword.text.toString()) {
                 return true
             }
         }
@@ -76,19 +98,28 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(
                     this,
-                    "Profile does not exists",
+                    "Customer profile does not exists",
                     Toast.LENGTH_LONG).show()
             }
         }
 
         loginAdminButton.setOnClickListener {
-            //TODO needs to check if current shared ref exists in db
-            saveNameAndPassword(
-                customerInputEditText.text!!,
-                customerInputEditPassword.text!!,
-                Constant.SHARED_PREF_ADMIN_USER_KEY,
-                Constant.SHARED_PREF_ADMIN_PASSWORD_KEY
-            )
+            if (checkIfAdminExist()) {
+                saveNameAndPassword(
+                    customerInputEditText.text!!,
+                    customerInputEditPassword.text!!,
+                    Constant.SHARED_PREF_ADMIN_USER_KEY,
+                    Constant.SHARED_PREF_ADMIN_PASSWORD_KEY)
+
+                // Login into admin Screen
+                val intent = Intent(this, AdminHomeScreen::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(
+                    this,
+                    "Admin profile does not exists",
+                    Toast.LENGTH_LONG).show()
+            }
         }
     }
 

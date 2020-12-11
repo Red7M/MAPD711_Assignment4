@@ -1,24 +1,20 @@
-package com.problem.solutions.redamehali.mapd711_assignment4
+package com.problem.solutions.redamehali.mapd711_assignment4.pizza
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-/**
- * Created by Reda Mehali on 12/3/20.
- */
+@Database(entities = [Pizza::class], version = 1, exportSchema = false)
+abstract class PizzaOrdersDatabase: RoomDatabase() {
 
-@Database(entities = [Customer::class], version = 1, exportSchema = false)
-abstract class CustomerDatabase: RoomDatabase() {
-
-    abstract fun customerDao(): CustomerDao
+    abstract fun pizzaOrdersDao(): PizzaOrdersDao
 
     companion object {
         @Volatile
-        private var INSTANCE : CustomerDatabase? = null
+        private var INSTANCE : PizzaOrdersDatabase? = null
 
-        fun getDatabase(context: Context): CustomerDatabase {
+        fun getDatabase(context: Context): PizzaOrdersDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
@@ -27,12 +23,13 @@ abstract class CustomerDatabase: RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    CustomerDatabase::class.java,
-                    "customer_database"
+                    PizzaOrdersDatabase::class.java,
+                    "pizza_orders_table"
                 ).build()
                 INSTANCE = instance
                 return instance
             }
         }
     }
+
 }

@@ -1,10 +1,11 @@
-package com.problem.solutions.redamehali.mapd711_assignment4
+package com.problem.solutions.redamehali.mapd711_assignment4.pizza
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.problem.solutions.redamehali.mapd711_assignment4.R
 import kotlinx.android.synthetic.main.view_orders_layout.*
 
 class ViewPizzaOrders: AppCompatActivity() {

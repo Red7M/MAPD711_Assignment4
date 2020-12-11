@@ -1,9 +1,10 @@
-package com.problem.solutions.redamehali.mapd711_assignment4
+package com.problem.solutions.redamehali.mapd711_assignment4.pizza
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.problem.solutions.redamehali.mapd711_assignment4.R
 import kotlinx.android.synthetic.main.pizza_orders_row.view.*
 
 /**
@@ -19,11 +20,11 @@ class PizzaOrdersAdapter: RecyclerView.Adapter<PizzaOrdersAdapter.MyViewHolder>(
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PizzaOrdersAdapter.MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.pizza_orders_row, parent, false))
     }
 
-    override fun onBindViewHolder(holder: PizzaOrdersAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = pizzaOrderList[position]
 
         holder.itemView.pizzaName.text = currentItem.pizzaName
