@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.problem.solutions.redamehali.mapd711_assignment4.R
-import com.problem.solutions.redamehali.mapd711_assignment4.pizza.ViewPizzaOrders
+import com.problem.solutions.redamehali.mapd711_assignment4.pizza.ViewCustomerPizzaOrders
 
 /**
  * Created by Reda Mehali on 12/3/20.
@@ -28,7 +28,7 @@ class CustomerScreen: AppCompatActivity() {
 
         val viewOrdersButton = findViewById<Button>(R.id.viewOrdersButton)
         viewOrdersButton.setOnClickListener {
-            val intent = Intent(this, ViewPizzaOrders::class.java)
+            val intent = Intent(this, ViewCustomerPizzaOrders::class.java)
             startActivity(intent)
         }
 

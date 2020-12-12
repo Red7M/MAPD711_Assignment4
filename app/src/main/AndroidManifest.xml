@@ -19,7 +19,8 @@
         <activity android:name=".customer.CustomerScreen" />
         <activity android:name=".customer.CustomerInformation" />
         <activity android:name=".customer.CustomerPlaceOrder" />
-        <activity android:name=".pizza.ViewPizzaOrders" />
+        <activity android:name=".pizza.ViewCustomerPizzaOrders" />
+        <activity android:name=".admin.AdminHomeScreen" />
     </application>
 
 </manifest>

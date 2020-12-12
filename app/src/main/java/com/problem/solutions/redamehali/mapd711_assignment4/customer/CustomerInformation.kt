@@ -20,6 +20,7 @@ class CustomerInformation : AppCompatActivity() {
     private lateinit var customerViewModel: CustomerViewModel
     private lateinit var username: String
     private lateinit var password: String
+    private lateinit var currentCustomer : Customer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +50,8 @@ class CustomerInformation : AppCompatActivity() {
                 addressText.setText(customer.address)
                 cityText.setText(customer.city)
                 postalCodeText.setText(customer.postalCode)
+
+                currentCustomer = customer
             }
         }
     }
@@ -80,7 +83,7 @@ class CustomerInformation : AppCompatActivity() {
         val city = cityText.text.toString()
         val postalCode = postalCodeText.text.toString()
 
-        val customer = Customer(0, userName, password,
+        val customer = Customer(currentCustomer.customerId, userName, password,
             firstName, lastName, address, city, postalCode)
 
         customerViewModel.addCustomer(customer)

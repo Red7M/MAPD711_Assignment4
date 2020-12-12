@@ -1,5 +1,6 @@
 package com.problem.solutions.redamehali.mapd711_assignment4.pizza
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,9 @@ import kotlinx.android.synthetic.main.pizza_orders_row.view.*
 /**
  * Created by Reda Mehali on 12/3/20.
  */
-class PizzaOrdersAdapter: RecyclerView.Adapter<PizzaOrdersAdapter.MyViewHolder>() {
+open class PizzaOrdersAdapter(val context: Context): RecyclerView.Adapter<PizzaOrdersAdapter.MyViewHolder>() {
 
-    private var pizzaOrderList = emptyList<Pizza>()
+    var pizzaOrderList = emptyList<Pizza>()
 
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

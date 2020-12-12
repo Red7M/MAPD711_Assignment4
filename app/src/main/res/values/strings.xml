@@ -21,4 +21,8 @@
     <string name="username">Username:</string>
     <string name="password">Password:</string>
     <string name="update">UPDATE</string>
+    <string name="status">Status:</string>
+    <string name="delivered">DELIVERED</string>
+    <string name="in_progress">IN PROGRESS</string>
+    <string name="received">RECEIVED</string>
 </resources>
